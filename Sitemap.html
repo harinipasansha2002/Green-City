@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Sitemap</title>
+    <style>
+        .sitemapbody {
+            font-family: Arial, sans-serif;
+            background-image: url("images/image23.jpg");
+            background-size: cover;
+        }
+        
+        h1 {
+            color: #be9a4b;
+            text-align: center;
+            font-size: 80px;
+            font-style: bold;
+        }
+        /*Make a sitemap*/
+        
+        svg {
+            display: block;
+            position: fixed;
+        }
+        
+        .node {
+            fill: #c9a14d;
+            cursor: pointer;
+        }
+        
+        .node:hover {
+            fill: #eaeaea;
+        }
+        
+        .line {
+            stroke: #8dccad;
+            stroke-width: 2;
+        }
+        
+        .site-map svg {
+            position: relative;
+            margin-top: 3%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="home.html"><img src="Images/logo1_prev_ui.png" alt="" class="logo"></a>
+        <h1>GREEN CITY </h1>
+        <!--search bar-->
+        <div class="search-bar">
+            <div class="drop-down">
+                <div id="drop-text" class="drop-text">
+                    <span id="span">FILTER</span>
+                    <!--<i class="fa fa-sort-asc" ></i>-->
+                    <i id="icon" class="fa fa-chevron-down"></i>
+                </div>
+                <ul id="list" class="drop-list">
+                    <li class="list-item">ALL</li>
+                    <li class="list-item">BLOGS</li>
+                    <li class="list-item">MARCKET</li>
+                    <li class="list-item">FOOD-PRINTS</li>
+                    <li class="list-item">SOCIAL ACT</li>
+                </ul>
+            </div>
+
+            <div class="searchbox">
+                <input type="text" id="search-input" class="searchbox" placeholder="Search ......">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        <div class="btn-s">
+            <button class="sign-in">sign up</button>
+            <button class="Log-in">Log in</button>
+        </div>
+    </div>
+
+    <div class="Wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box-login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="forget-remember">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="">forgot password ?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Dont have an Account?<a href="#" class="register-link"> Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box-Register">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="forget-remember">
+                    <label><input type="checkbox"> I agree to the terms & conditions </label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an Account?<a href="#" class="login-link"> Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <nav class="nav-bar">
+        <div class="slde-bar">
+            <div class="navlist" id="navlink">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="userprofile.html">USER PROFILE</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="Gallery.html">GALLERY </a></li>
+                    <li><a href="feedback.html">FEEDBACK</a></li>
+
+                </ul>
+                <ul>
+                    <li><a href="Sitemap.html">SITE MAP</a></li>
+                    <li><a href="TEAM.html">ABOUT US</a></li>
+                </ul>
+
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()"></i>
+            <div class="social-media">
+                <img src="Images/fb.png" alt="">
+                <img src="Images/ig.png" alt="">
+                <img src="Images/tw.png" alt="">
+            </div>
+
+        </div>
+
+    </nav>
+    <section class="sitemapbody">
+        <!--Start the sitemap-->
+        <section class="site-map">
+            <h1>Sitemap</h1>
+            <svg viewBox="0 0 600 400">
+
+        <!--Home Page link-->
+        <rect class="node" x="250" y="40" width="100" height="30" rx="15"></rect>
+        <text class= "word" x="300" y="60" text-anchor="middle">
+            <a href="home.html">Home Page</a>
+        </text>
+
+        <!--Gallery link-->
+        <rect class="node" x="55" y="140" width="70" height="30" rx="15"></rect>
+        <text class= "word" x="90" y="160" text-anchor="middle">
+            <a href="gallery.html">Gallery</a>
+        </text>
+
+        <!--Shop link-->
+        <rect class="node" x="135" y="220" width="70" height="30" rx="15"></rect>
+        <text class= "word" x="170" y="240" text-anchor="middle">
+            <a href="shop.html">Shop</a>
+        </text>
+
+        <!--User Profile link-->
+        <rect class="node" x="200" y="175" width="100" height="30" rx="15"></rect>
+        <text class= "word" x="250" y="195" text-anchor="middle">
+            <a href="userprofile.html">User Profile</a>
+        </text>
+
+        <!--Feedback link-->
+        <rect class="node" x="286" y="220" width="90" height="30" rx="15"></rect>
+        <text class= "word" x="332" y="240" text-anchor="middle">
+            <a href="feedback.html">Feedback</a>
+        </text> 
+
+        <!--Sitemap link-->
+        <rect class="node" x="385" y="175" width="70" height="30" rx="15"></rect>
+        <text class= "word" x="421" y="195" text-anchor="middle">
+            <a href="Sitemap.html">Sitemap</a>
+        </text>
+            
+        <!--About Us link-->
+        <rect class="node" x="458" y="140" width="80" height="30" rx="15"></rect>
+        <text class= "word" x="499" y="160" text-anchor="middle">
+            <a href="TEAM.html">About Us</a>
+        </text>
+            
+        <!--Create the lines-->
+        <line class="line" x1="90" y1="110" x2="500" y2="110"></line>
+        <line class="line" x1="300" y1="70" x2="300" y2="110"></line>
+        <line class="line" x1="91" y1="110" x2="91" y2="140"></line>
+        <line class="line" x1="170" y1="110" x2="170" y2="220"></line>
+        <line class="line" x1="250" y1="110" x2="250" y2="175"></line>
+        <line class="line" x1="330" y1="110" x2="330" y2="220"></line>
+        <line class="line" x1="420" y1="110" x2="420" y2="175"></line>
+        <line class="line" x1="499" y1="110" x2="499" y2="140"></line>
+        </svg>
+        </section>
+    </section>
+
+    <section class="footer">
+        <h4>Our story</h4>
+        <p>We offer plenty of ideas tips and eco frindly projects in the vesion of protecting environment and help the man kind to live in a eco friendly and well developed infastructure. <br> We also organize special events and fund raising campaigns. One
+            of the best sustainable organization.</p>
+        <div class="footer-info">
+            <ul>
+                <h4>COMPANY</h4>
+                <a href="TEAM.html">
+                    <li>About us</li>
+                </a>
+                <a href="">
+                    <li>Terms and privacy</li>
+                </a>
+                <a href="feedback.html">
+                    <li>FEEDBACK us</li>
+                </a>
+            </ul>
+            <ul>
+                <h4>Navigation</h4>
+                <a href="home.html">
+                    <li>HOME</li>
+                </a>
+                <a href="shop.html">
+                    <li>SHOP</li>
+                </a>
+                <a href="userprofile.html">
+                    <li>USER PROFILE</li>
+                </a>
+
+            </ul>
+            <ul>
+                <h4>‎ ‎ ‎ ‎ </h4>
+                <a href="Gallery.html">
+                    <li>GALLERY</li>
+                </a>
+                <a href="Sitemap.html">
+                    <li>SITE MAP</li>
+                </a>
+
+
+            </ul>
+
+        </div>
+        <div class="icons">
+            <a href="https://www.facebook.com/profile.php?id=100090712208731"><i class="fa fa-facebook"></i></a>
+            <a href=""> <i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/harinipasansha/?next=%2F"> <i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/harini-pasansha-9b50b8295/"> <i class="fa fa-linkedin"></i></a>
+        </div>
+        <p>Made by <a href="PageEditor.html">Harini Pasansha</a> with <i class="fa fa-heart-o"></i></p>
+    </section>
+    <script>
+        // to nav bar
+        var navlink = document.getElementById("navlink");
+
+        // show menu 
+        function showmenu() {
+            navlink.style.right = "0";
+
+        }
+
+        function hidemenu() {
+            navlink.style.right = "-290px";
+        }
+
+        let dropdownbtn = document.getElementById("drop-text");
+        let list = document.getElementById("list");
+        let icon = document.getElementById("icon");
+        let span = document.getElementById("span");
+        let Input = document.getElementById("search-input");
+        let listItems = document.querySelectorAll(".list-item");
+
+        dropdownbtn.onclick = function() {
+            if (list.classList.contains("show")) {
+                icon.style.rotate = "0deg";
+            } else {
+                icon.style.rotate = "-180deg";
+            }
+            list.classList.toggle("show");
+        };
+
+        window.onclick = function(e) {
+            if (e.target.id !== "drop-text" && e.target.id !== "span" && e.target.id !== "icon") {
+                list.classList.remove("show");
+
+                icon.style.rotate = "0deg";
+            }
+        };
+
+        for (item of listItems) {
+            item.onclick = function(e) {
+                span.innerText = e.target.innerText;
+            };
+        }
+
+        const Wrapper = document.querySelector('.Wrapper');
+        const loginlink = document.querySelector('.login-link');
+        const registerlink = document.querySelector('.register-link');
+        const popupbtnpop = document.querySelector('.btn-s .Log-in');
+        const iconclose = document.querySelector('.icon-close');
+        const popupbtnsign = document.querySelector('.btn-s .sign-in');
+
+        registerlink.addEventListener('click', () => {
+            Wrapper.classList.add('active');
+        });
+
+        popupbtnsign.addEventListener('click', () => {
+            Wrapper.classList.add('active');
+            Wrapper.classList.add('active-popupbtn');
+        });
+
+        loginlink.addEventListener('click', () => {
+            Wrapper.classList.remove('active');
+        });
+
+        popupbtnpop.addEventListener('click', () => {
+            Wrapper.classList.remove('active');
+            Wrapper.classList.add('active-popupbtn');
+        });
+
+        iconclose.addEventListener('click', () => {
+            Wrapper.classList.remove('active');
+            Wrapper.classList.remove('active-popupbtn');
+        });
+    </script>
+    <script src="home.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
