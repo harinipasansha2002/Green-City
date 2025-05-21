@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .headerrr {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        #first {
+            border: 2px solid #0d2250;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            width: 10px;
+            height: 300px;
+            padding: 50px;
+            margin: 90px;
+            background-color: aqua;
+            float: left;
+            background-image: ab;
+        }
+        
+        #second {
+            border: 2px solid #0d2250;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            width: 200px;
+            height: 300px;
+            padding: 50px;
+            margin: 10px;
+            background-color: aqua;
+            float: left;
+        }
+        
+        .mainbody {
+            margin-top: -10%;
+            height: 80%;
+            background-image: url(Images/abcdef.jpg);
+            background-size: cover;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        
+        #window {
+            background-color: #5e6161;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+        }
+        
+        button {
+            background-color: #0a4b64;
+            color: rgb(217, 233, 233);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .close {
+            float: right;
+            cursor: pointer;
+        }
+        
+        .step {
+            display: none;
+        }
+        
+        .step.active {
+            display: block;
+        }
+        
+        #enterclose {
+            margin-left: 40px;
+        }
+        
+        #d {
+            border: 2px solid #0d2250;
+            border-radius: 10px;
+            margin-bottom: 2px;
+            background-color: rgb(9, 165, 165);
+            margin-left: 20px;
+        }
+        
+        #e {
+            border: 2px solid #0d2250;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+        
+        #hh2 {
+            text-align: center;
+        }
+        
+        #a {
+            border: 4px solid #051b3b;
+            border-radius: 40px;
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            background-color: hwb(182 15% 29%);
+            display: grid;
+        }
+        
+        #ab {
+            border: 4px solid #0d2250;
+            border-radius: 40px;
+            width: 700px;
+            float: left;
+            margin-left: 55px;
+            margin-top: 1px;
+            margin-bottom: 30px;
+            background-color: hwb(182 15% 29%);
+        }
+        
+        #b {
+            border: 3px solid #1b1c1d;
+            border-radius: 10px;
+            padding-left: 5%;
+            background-color: #118c9c;
+            width: 550px;
+            margin-left: 40px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            height: 120px;
+        }
+        
+        #h4 {
+            text-align: center;
+        }
+        
+        #startbutton {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        #h2 {
+            text-align: center;
+            font-size: 25px;
+        }
+        
+        #z {
+            margin-left: 20px;
+        }
+        
+        #all {
+            border: 4px solid #0e2c2e;
+            border-radius: 90px;
+            margin-left: 150px;
+            margin-right: 150px;
+            margin-bottom: 6px;
+            height: 600px;
+            background-image: url(Images/abcdef.jpg);
+        }
+        
+        #h1 {
+            font-size: 40px;
+            font-style: italic;
+            text-decoration: underline;
+            text-align: center;
+            text-decoration-color: rgb(49, 51, 51);
+            color: rgb(0, 0, 0);
+            padding: 0px;
+            margin: 1px;
+            visibility: 2;
+            margin-top: 190px;
+            margin-bottom: 20px;
+        }
+        
+        #h3 {
+            background-color: rgb(121, 138, 138);
+            width: 720px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 40px;
+            border-radius: 10px;
+        }
+        
+        #enter {
+            width: 200px;
+            margin-left: 40%;
+            border-radius: 25%;
+            box-shadow: inset;
+            background-color: rgb(24, 43, 43);
+        }
+        
+        #profileOutput {
+            margin-top: 20px;
+        }
+        
+        #profileOutput fieldset {
+            background-color: #2d5e80;
+            font-style: normal;
+            font-size: 100%;
+        }
+        
+        .step {
+            margin-bottom: 10px;
+        }
+        
+        .search-bar1 {
+            margin-right: 2%;
+            color: #000;
+            display: flex;
+            align-items: center;
+            border-radius: 50px;
+            min-width: 700px;
+            border: 1px solid white;
+            background-color: #fff;
+        }
+        
+        .searchbox1 {
+            display: flex;
+            align-items: center;
+            padding-right: 8px;
+            width: 100%;
+            color: #000;
+        }
+        
+        .searchbox1 input {
+            padding: 1px;
+            margin-top: 5px;
+            width: 100%;
+            font-size: 20px;
+            font-weight: 500;
+            border: 0;
+            outline: 0;
+            color: #000;
+        }
+        
+        .click-button {
+            margin-top: 40px;
+        }
+        
+        .rts {
+            margin-left: 50px;
+        }
+        /* yasiru---- */
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <a href="home.html"><img src="Images/logo1_prev_ui.png" alt="" class="logo"></a>
+        <h1>GREEN CITY </h1>
+        <!--search bar-->
+        <div class="search-bar">
+            <div class="drop-down">
+                <div id="drop-text" class="drop-text">
+                    <span id="span">FILTER</span>
+                    <!--<i class="fa fa-sort-asc" ></i>-->
+                    <i id="icon" class="fa fa-chevron-down"></i>
+                </div>
+                <ul id="list" class="drop-list">
+                    <li class="list-item">ALL</li>
+                    <li class="list-item">BLOGS</li>
+                    <li class="list-item">MARCKET</li>
+                    <li class="list-item">FOOD-PRINTS</li>
+                    <li class="list-item">SOCIAL ACT</li>
+                </ul>
+            </div>
+
+            <div class="searchbox">
+                <input type="text" id="search-input" class="searchbox" placeholder="Search ......">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        <div class="btn-s">
+            <button class="sign-in">sign up</button>
+            <button class="Log-in">Log in</button>
+        </div>
+    </div>
+
+    <div class="Wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box-login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="forget-remember">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="">forgot password ?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Dont have an Account?<a href="#" class="register-link"> Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box-Register">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="forget-remember">
+                    <label><input type="checkbox"> I agree to the terms & conditions </label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an Account?<a href="#" class="login-link"> Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <nav class="nav-bar">
+        <div class="slde-bar">
+            <div class="navlist" id="navlink">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="userprofile.html">USER PROFILE</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="Gallery.html">GALLERY </a></li>
+                    <li><a href="feedback.html">FEEDBACK</a></li>
+
+                </ul>
+                <ul>
+                    <li><a href="Sitemap.html">SITE MAP</a></li>
+                    <li><a href="TEAM.html">ABOUT US</a></li>
+                </ul>
+
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()"></i>
+            <div class="social-media">
+                <img src="Images/fb.png" alt="">
+                <img src="Images/ig.png" alt="">
+                <img src="Images/tw.png" alt="">
+            </div>
+
+        </div>
+
+    </nav>
+    <div class="mainbody">
+        <h1 id="h1">USER PROFILE.</h1>
+
+        <div class="windprompt">
+            <div id="startbutton">
+                <h3 id="h3">.. CLICK THE STRART BUTTON TO PROVIDE YOUR DETAILS ..</h3>
+                <button class="click-button" id="start" onclick="openPopup()">Start</button><br><br>
+            </div>
+            <div id="profilePopup" class="headerrr">
+                <div id="window"><span class="close" onclick="closePopup()">&times;</span>
+                    <h2 id="hh2">USER PROFILE.</h2>
+                    <!--mainstep1-->
+                    <div id="a1">
+                        <fieldset id="d">
+                            <div id="z">
+                                <div id="step1" class="step active">
+                                    <h2 id="h2">1]. Personal Details. | Step - 1/5 |</h2>
+                                    <h3>* Enter Your Name</h3>
+                                    <lable for="name">Name</lable>
+                                    <input type="text" id="1">
+                                    <button onclick="nexts()">NEXT</button>
+                                </div>
+                                <div id="step2" class="step">
+                                    <h2 id="h2">1]. Personal Details | Step - 2/5 |</h2>
+                                    <h3>* Enter Your Surname</h3>
+                                    <lable for="surname">SURName</lable>
+                                    <input type="text" id="2">
+                                    <button onclick="nexts()">NEXT</button>
+                                </div>
+                                <div id="step3" class="step">
+                                    <h2 id="h2">1]. Personal Details | Step - 3/5 |</h2>
+                                    <h3>* Enter Your ID Number.</h3>
+                                    <lable for="age">ID number - </lable>
+                                    <input type="text" id="3">
+                                    <button onclick="nexts()">NEXT</button>
+                                </div>
+                                <div id="step4" class="step">
+                                    <h2 id="h2">1]. Personal Details | Step - 4/5 |</h2>
+                                    <h3>* Enter Your Country.</h3>
+                                    <lable for="country">Country - </lable>
+                                    <input type="text" id="4">
+                                    <button onclick="nexts()">NEXT</button><br>
+                                </div>
+                                <div id="step5" class="step">
+                                    <h2 id="h2">1]. Personal Details | Step - 5/5 |</h2>
+                                    <h3>* Enter Your City.</h3>
+                                    <lable for="country">City - </lable>
+                                    <input type="text" id="5">
+                                    <button onclick="cp5(),enter()">OK</button><br>
+                                </div>
+                            </div><br>
+                            <div class="personal-details" id="personalDetails">
+                                <fieldset id="e">
+                                    <h4 id="h2">1]. Personal Details</h4>
+                                    <ul class="rts">
+                                        <li>
+                                            <strong>Name:</strong> <span id="name"></span><br></li>
+                                        <li>
+                                            <strong>Surname:</strong> <span id="surname"></span>
+                                        </li>
+                                        <li>
+                                            <strong>ID Number:</strong> <span id="age"></span>
+                                        </li>
+                                        <li>
+                                            <strong>Country:</strong> <span id="country"></span>
+                                        </li>
+                                        <li>
+                                            <strong>City:</strong> <span id="city"></span>
+                                        </li>
+                                    </ul><br>
+                                    <div id="enterclose">
+                                        <button onclick="nexts()">ENTER</button>
+                                        <button onclick="closePopup()">CANCEL</button><br></div>
+                                    <br>
+                                </fieldset>
+                            </div>
+                        </fieldset><br>
+                    </div>
+                    <!--mainstep2-->
+                    <div id="a2">
+                        <fieldset id="d">
+                            <div id="z">
+                                <div id="step6" class="step">
+                                    <h2 id="h2">2]. Qualification. | Step - 1/4 |</h2>
+                                    <h3>* Enter Your Area of Study.</h3>
+                                    <lable for="name">Area of study - </lable>
+                                    <input type="text" id="6">
+                                    <button onclick="nexts()">NEXT</button><br>
+                                </div>
+                                <div id="step7" class="step">
+                                    <h2 id="h2">2]. Qualification. | Step - 2/4 |</h2>
+                                    <h3>* Enter Your University/Institution.</h3>
+                                    <lable for="surname">University/Institution - </lable>
+                                    <input type="text" id="7">
+                                    <button onclick="nexts()">NEXT</button><br>
+                                </div>
+                                <div id="step8" class="step">
+                                    <h2 id="h2">2]. Qualification. | Step - 3/4 |</h2>
+                                    <h3>* Enter Your completion Year.</h3>
+                                    <lable for="age">completion Year - </lable>
+                                    <input type="text" id="8">
+                                    <button onclick="nexts()">NEXT</button><br>
+                                </div>
+                                <div id="step9" class="step">
+                                    <h2 id="h2">2]. Qualification. | Step - 4/4 |</h2>
+                                    <h3>* Enter Your Country.</h3>
+                                    <lable for="country">Country - </lable>
+                                    <input type="text" id="9">
+                                    <button onclick="cp9(),enter()">OK</button><br>
+                                </div> <br>
+                            </div>
+                            <div class="personal-details" id="personalDetails">
+                                <fieldset id="e">
+                                    <h3 id="h2">2]. Qualification. </h3>
+                                    <ul class="rts">
+                                        <li>
+                                            <strong>Area of study :</strong> <span id="namee"></span>
+                                        </li>
+                                        <li>
+                                            <strong>University/Institution :</strong> <span id="surnamee"></span>
+                                        </li>
+                                        <li>
+                                            <strong>completion Year :</strong> <span id="agee"></span>
+                                        </li>
+                                        <li>
+                                            <strong>Country :</strong> <span id="countrye"></span>
+                                        </li>
+                                    </ul><br>
+                                    <div id="enterclose">
+                                        <button onclick="nexts()">ENTER</button>
+                                        <button onclick="closePopup()">CANCEL</button><br><br>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </fieldset><br>
+                    </div>
+                    <!--mainstep3-->
+                    <div id="a3">
+                        <fieldset id="d">
+                            <div id="z">
+                                <div id="step10" class="step">
+                                    <h2 id="h2">3]. Contact Deatils. | Step - 1/4 |</h2>
+                                    <h3>* Enter Your Email.</h3>
+                                    <lable for="name">Email - </lable>
+                                    <input type="text" id="10">
+                                    <button onclick="nexts()">NEXT</button>
+                                </div>
+                                <div id="step11" class="step">
+                                    <h2 id="h2">3]. Contact Deatils. | Step - 2/4 |</h2>
+                                    <h3>* Enter Your Contact Number.</h3>
+                                    <lable for="surname">Contact Numbeer - </lable>
+                                    <input type="text" id="11">
+                                    <button onclick="nexts()">NEXT</button>
+                                </div>
+                                <div id="step12" class="step">
+                                    <h2 id="h2">3]. Contact Deatils. | Step - 3/4 |</h2>
+                                    <h3>* Enter Your Address - </h3>
+                                    <lable for="age">Address - </lable>
+                                    <input type="text" id="12">
+                                    <button onclick="nexts()">NEXT</button>
+                                </div>
+                                <div id="step13" class="step">
+                                    <h2 id="h2">3]. Contact Deatils. | Step - 4/4 | </h2>
+                                    <h3>* Enter Your Social Media Link (optional).</h3>
+                                    <lable for="country">Social Media Link - </lable>
+                                    <input type="text" id="13">
+                                    <button onclick="cp13(),enter()">OK</button><br>
+                                </div>
+                            </div><br>
+                            <div class="personal-details" id="personalDetails">
+                                <fieldset id="e">
+                                    <h4 id="h2">3]. Contact Deatils. </h4>
+                                    <ul class="rts">
+                                        <li>
+                                            <strong>Email:</strong> <span id="nameee"></span>
+                                        </li>
+                                        <li>
+                                            <strong>Contact Number:</strong> <span id="surnameee"></span>
+                                        </li>
+                                        <li>
+                                            <strong>Address:</strong> <span id="ageee"></span>
+                                        </li>
+                                        <li>
+                                            <strong>Social Media Link :</strong> <span id="countryee"></span>
+                                        </li>
+                                    </ul><br>
+                                    <div id="enterclose">
+                                        <button onclick="check(),op()">ENTER</button>
+                                        <button onclick="closePopup()">CANCEL</button><br><br>
+                                    </div>
+                                </fieldset><br>
+                            </div>
+                        </fieldset><br>
+                        <button onclick="finishProfile()" id="enter">CLOSE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-profile">
+            <fieldset id="all">
+                <fieldset id="a">
+                    <div class="personal-details" id="personalDetails">
+                        <h3 id="h4">** Personal Details **</h3>
+                        <fieldset id="b">
+                            <ul>
+                                <li>
+                                    <strong>Name :</strong> <span id="nameeeee"></span><br></li>
+                                <li>
+                                    <strong>Surname :</strong> <span id="surnameeeee"></span>
+                                </li>
+                                <li>
+                                    <strong>ID Number :</strong> <span id="ageeeee"></span>
+                                </li>
+                                <li>
+                                    <strong>Country :</strong> <span id="countryeeee"></span>
+                                </li>
+                                <li>
+                                    <strong>City :</strong> <span id="cityeeee"></span>
+                                </li>
+                            </ul>
+                        </fieldset><br>
+                    </div>
+                </fieldset><br>
+
+                <fieldset id="ab">
+                    <div class="personal-details" id="personalDetails">
+                        <h3 id="h4">** Qualification **</h3>
+                        <fieldset id="b">
+                            <ul>
+                                <li>
+                                    <strong>Area of study :</strong> <span id="nameeeeee"></span>
+                                </li>
+                                <li>
+                                    <strong>University/Institution :</strong> <span id="surnameeeeee"></span>
+                                </li>
+                                <li>
+                                    <strong>completion Year :</strong> <span id="ageeeeee"></span>
+                                </li>
+                                <li>
+                                    <strong>Country:</strong> <span id="countryeeeee"></span>
+                                </li>
+                            </ul>
+                        </fieldset><br>
+                    </div>
+                </fieldset>
+
+                <fieldset id="ab">
+                    <div class="personal-details" id="personalDetails">
+                        <h3 id="h4">** Contact Details **</h3>
+                        <fieldset id="b">
+                            <ul>
+                                <li>
+                                    <strong>Email :</strong> <span id="nameeee"></span>
+                                </li>
+                                <li>
+                                    <strong>Contact Number :</strong> <span id="surnameeee"></span>
+                                </li>
+                                <li>
+                                    <strong>Address :</strong> <span id="ageeee"></span>
+                                </li>
+                                <li>
+                                    <strong>Social Media Link :</strong> <span id="countryeee"></span>
+                                </li>
+                            </ul>
+                        </fieldset><br>
+                    </div>
+                </fieldset>
+            </fieldset>
+        </div><br>
+        <!--footer-->
+        <section class="footer">
+            <h4>Our story</h4>
+            <p>we offer plenty of ideas tips and eco frindly projects in the vesion of protecting Environment and help the man kind to live in a Eco friendly and well developed infastructure. <br> We also organize special events and fund raising campaigns.One
+                of the best sustainable organization </p>
+            <div class="footer-info">
+                <ul>
+                    <h4>COMPANY</h4>
+                    <a href="TEAM.html">
+                        <li>About us</li>
+                    </a>
+                    <a href="">
+                        <li>Terms and privacy</li>
+                    </a>
+                    <a href="feedback.html">
+                        <li>FEEDBACK us</li>
+                    </a>
+                </ul>
+                <ul>
+                    <h4>Navigation</h4>
+                    <a href="home.html">
+                        <li>HOME</li>
+                    </a>
+                    <a href="shop.html">
+                        <li>SHOP</li>
+                    </a>
+                    <a href="userprofile.html">
+                        <li>USER PROFILE</li>
+                    </a>
+
+                </ul>
+                <ul>
+                    <h4>‎ ‎ ‎ ‎ </h4>
+                    <a href="Gallery.html">
+                        <li>GALLERY</li>
+                    </a>
+                    <a href="Sitemap.html">
+                        <li>SITE MAP</li>
+                    </a>
+
+
+                </ul>
+
+            </div>
+            <div class="icons">
+                <a href="https://www.facebook.com/profile.php?id=100083272787172&mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
+                <a href=""> <i class="fa fa-twitter"></i></a>
+                <a href="https://www.instagram.com/_laksh__an_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> <i class="fa fa-instagram"></i></a>
+                <a href="https://lk.linkedin.com/in/lakshan-fernando-770037294"> <i class="fa fa-linkedin"></i></a>
+
+            </div>
+            <p>Made by <a href="page_editor_yasiru.html">Yasiru Nadeesha</a> with <i class="fa fa-heart-o"></i></p>
+
+
+
+        </section>
+
+        <script>
+            function openPopup() {
+                document.getElementById("profilePopup").style.display = "block";
+            }
+
+            function closePopup() {
+                document.getElementById("profilePopup").style.display = "none";
+            }
+
+            function op() {
+                alert("* IF YOU FINISH ENTERED YOUR DETAILS, PLEASE ENTER CLOSE BUTTON.......!");
+            }
+
+            function cp13() {
+                document.getElementById("step13").style.display = "none";
+            }
+
+            function cp5() {
+                document.getElementById("step5").style.display = "none";
+            }
+
+            function cp9() {
+                document.getElementById("step9").style.display = "none";
+            }
+
+            function check() {
+                alert("PLEASE CHECK YOUE DETAILS...!");
+            }
+            var navlink = document.getElementById("navlink");
+
+
+            let currentStep = 1;
+            let profileData = {};
+
+            function nexts() {
+                const currentStepDiv = document.getElementById("step" + currentStep);
+                const nextStepDiv = document.getElementById("step" + (currentStep + 1));
+                currentStepDiv.classList.remove("active");
+                nextStepDiv.classList.add("active");
+                currentStep++;
+            }
+
+            function enter() {
+
+                profileData.name = document.getElementById("1").value;
+                profileData.surname = document.getElementById("2").value;
+                profileData.age = document.getElementById("3").value;
+                profileData.country = document.getElementById("4").value;
+                profileData.city = document.getElementById("5").value;
+                profileData.namee = document.getElementById("6").value;
+                profileData.surnamee = document.getElementById("7").value;
+                profileData.agee = document.getElementById("8").value;
+                profileData.countrye = document.getElementById("9").value;
+                profileData.nameee = document.getElementById("10").value;
+                profileData.surnameee = document.getElementById("11").value;
+                profileData.ageee = document.getElementById("12").value;
+                profileData.countryee = document.getElementById("13").value;
+
+                document.getElementById("name").innerText = profileData.name;
+                document.getElementById("surname").innerText = profileData.surname;
+                document.getElementById("age").innerText = profileData.age;
+                document.getElementById("country").innerText = profileData.country;
+                document.getElementById("city").innerText = profileData.city;
+                document.getElementById("namee").innerText = profileData.namee;
+                document.getElementById("surnamee").innerText = profileData.surnamee;
+                document.getElementById("agee").innerText = profileData.agee;
+                document.getElementById("countrye").innerText = profileData.countrye;
+                document.getElementById("nameee").innerText = profileData.nameee;
+                document.getElementById("surnameee").innerText = profileData.surnameee;
+                document.getElementById("ageee").innerText = profileData.ageee;
+                document.getElementById("countryee").innerText = profileData.countryee;
+            }
+
+            function finishProfile() {
+                closePopup();
+                profileData.name = document.getElementById("1").value;
+                profileData.surname = document.getElementById("2").value;
+                profileData.age = document.getElementById("3").value;
+                profileData.country = document.getElementById("4").value;
+                profileData.city = document.getElementById("5").value;
+                profileData.namee = document.getElementById("6").value;
+                profileData.surnamee = document.getElementById("7").value;
+                profileData.agee = document.getElementById("8").value;
+                profileData.countrye = document.getElementById("9").value;
+                profileData.nameee = document.getElementById("10").value;
+                profileData.surnameee = document.getElementById("11").value;
+                profileData.ageee = document.getElementById("12").value;
+                profileData.countryee = document.getElementById("13").value;
+                displayProfile();
+
+            }
+
+            function displayProfile() {
+                document.getElementById("nameeeee").innerText = profileData.name;
+                document.getElementById("surnameeeee").innerText = profileData.surname;
+                document.getElementById("ageeeee").innerText = profileData.age;
+                document.getElementById("countryeeee").innerText = profileData.country;
+                document.getElementById("cityeeee").innerText = profileData.city;
+                document.getElementById("nameeeeee").innerText = profileData.namee;
+                document.getElementById("surnameeeeee").innerText = profileData.surnamee;
+                document.getElementById("ageeeeee").innerText = profileData.agee;
+                document.getElementById("countryeeeee").innerText = profileData.countrye;
+                document.getElementById("nameeee").innerText = profileData.nameee;
+                document.getElementById("surnameeee").innerText = profileData.surnameee;
+                document.getElementById("ageeee").innerText = profileData.ageee;
+                document.getElementById("countryeee").innerText = profileData.countryee;
+                alert("** YOU UPDATE SUCCESSFULLY YOUR USER PROFILE...!");
+            }
+
+            function finish() {
+
+                alert("** YOU UPDATE SUCCESSFULLY YOUR USER PROFILE...!");
+            }
+        </script>
+        <script>
+            var navlink = document.getElementById("navlink");
+
+            // show menu 
+            function showmenu() {
+                navlink.style.right = "0";
+
+            }
+
+            function hidemenu() {
+                navlink.style.right = "-290px";
+            }
+
+
+
+
+
+            let dropdownbtn = document.getElementById("drop-text");
+            let list = document.getElementById("list");
+            let icon = document.getElementById("icon");
+            let span = document.getElementById("span");
+            let Input = document.getElementById("search-input");
+            let listItems = document.querySelectorAll(".list-item");
+
+
+
+            dropdownbtn.onclick = function() {
+                if (list.classList.contains("show")) {
+                    icon.style.rotate = "0deg";
+                } else {
+                    icon.style.rotate = "-180deg";
+                }
+                list.classList.toggle("show");
+            };
+
+            window.onclick = function(e) {
+                if (e.target.id !== "drop-text" && e.target.id !== "span" && e.target.id !== "icon") {
+                    list.classList.remove("show");
+
+                    icon.style.rotate = "0deg";
+                }
+            };
+
+            for (item of listItems) {
+                item.onclick = function(e) {
+                    span.innerText = e.target.innerText;
+                };
+            }
+
+
+
+
+            const Wrapper = document.querySelector('.Wrapper');
+            const loginlink = document.querySelector('.login-link');
+            const registerlink = document.querySelector('.register-link');
+            const popupbtnpop = document.querySelector('.btn-s .Log-in');
+            const iconclose = document.querySelector('.icon-close');
+            const popupbtnsign = document.querySelector('.btn-s .sign-in');
+
+            registerlink.addEventListener('click', () => {
+                Wrapper.classList.add('active');
+            });
+
+            popupbtnsign.addEventListener('click', () => {
+                Wrapper.classList.add('active');
+                Wrapper.classList.add('active-popupbtn');
+            });
+
+            loginlink.addEventListener('click', () => {
+                Wrapper.classList.remove('active');
+            });
+
+            popupbtnpop.addEventListener('click', () => {
+                Wrapper.classList.remove('active');
+                Wrapper.classList.add('active-popupbtn');
+            });
+
+
+            iconclose.addEventListener('click', () => {
+                Wrapper.classList.remove('active');
+                Wrapper.classList.remove('active-popupbtn');
+            });
+        </script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
