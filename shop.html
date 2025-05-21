@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online shop</title>
+    <link rel="stylesheet" href="shop.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+
+
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <a href="home.html"><img src="Images/logo1_prev_ui.png" alt="" class="logo"></a>
+        <h1>GREEN CITY </h1>
+        <!--search bar-->
+        <div class="search-bar">
+            <div class="drop-down">
+                <div id="drop-text" class="drop-text">
+                    <span id="span">FILTER</span>
+                    <!--<i class="fa fa-sort-asc" ></i>-->
+                    <i id="icon" class="fa fa-chevron-down"></i>
+                </div>
+                <ul id="list" class="drop-list">
+                    <li class="list-item">ALL</li>
+                    <li class="list-item">BLOGS</li>
+                    <li class="list-item">MARCKET</li>
+                    <li class="list-item">FOOD-PRINTS</li>
+                    <li class="list-item">SOCIAL ACT</li>
+                </ul>
+            </div>
+            <div class="searchbox">
+                <input type="text" id="search-input" class="searchbox1" placeholder="Search ......">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        <div class="btn-s">
+            <button class="sign-in">sign up</button>
+            <button class="Log-in">Log in</button>
+        </div>
+    </div>
+    <div class="Wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box-login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="forget-remember">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="">forgot password ?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Dont have an Account?<a href="#" class="register-link"> Register</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="form-box-Register">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required style="border:hidden">
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="forget-remember">
+                    <label><input type="checkbox"> I agree to the terms & conditions </label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an Account?<a href="#" class="login-link"> Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--Start the navigation bar-->
+    <nav class="nav-bar">
+        <div class="slde-bar">
+            <div class="navlist" id="navlink">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="userprofile.html">USER PROFILE</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="Gallery.html">GALLERY </a></li>
+                    <li><a href="feedback.html">FEEDBACK</a></li>
+
+                </ul>
+                <ul>
+                    <li><a href="Sitemap.html">SITE MAP</a></li>
+                    <li><a href="TEAM.html">ABOUT US</a></li>
+                </ul>
+
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()"></i>
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=100090712208731"> <img src="Images/fb.png" alt=""></a>
+                <a href="https://www.instagram.com/harinipasansha/?next=%2F"> <img src="Images/ig.png" alt=""></a>
+                <a href="https://twitter.com/Mrpro93809286"> <img src="Images/tw.png" alt=""> </a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <section class="showcart">
+        <div class="cartProducts">
+            <h2></h2>
+            <div class="cart">
+                <i class="fa fa-shopping-cart"></i>
+                <!--<div class="cartAmount">
+                        <h3>0</h3>
+                    </div>-->
+            </div>
+        </div>
+
+        <div class="shop">
+
+            <div class="medium-4 columns">
+                <div class="cart">
+                    <h1>Cart items</h1>
+                    <div class="row1">
+                        <div class="medium-6">
+                            <button class="tiny secondary" id="clear">Clear the cart</button>
+                        </div>
+                        <div class="medium-6 columns">
+                            <a href="checkout.html"><button class="tiny1" title="Work in progress">Checkout</button></a>
+                        </div>
+                    </div>
+                    <div id="cartItems">Loading cart...</div>
+                    Total price: <strong id="totalPrice">0 $</strong>
+                </div>
+            </div>
+
+            <!--done categories-->
+            <section id="categories" class="sectionPadding">
+
+                <div class="category">
+                    <img src="shop/clothes.jpg" alt="picture of clothes" width="200" height="220">
+                    <a href="#outfit">
+                        <h4>EcoChic Outfits </h4>
+                    </a>
+                </div>
+
+                <div class="category">
+                    <img src="shop/Download premium vector of Pink stationery planner set vector about good notes, clipboard, planner sticker, good notes sticker, and to do list 936901.jpg" alt="picture of stationary" width="200" height="220">
+                    <a href="#stationary">
+                        <h4>NatureNote </h4>
+                    </a>
+                </div>
+
+                <div class="category">
+                    <img src="shop/homedeco.jpg" alt="picture of homedeco" width="200" height="220">
+                    <a href="#deco">
+                        <h4>EcoTrend deco </h4>
+                    </a>
+                </div>
+
+                <div class="category">
+                    <img src="shop/Eco friendly wreath of no plastic items.jpg" alt="picture of EcoSmart Essentials" width="200" height="220">
+                    <a href="#other">
+                        <h4>EcoSmart </h4>
+                    </a>
+                </div>
+
+            </section>
+
+            <div class="popup" id="popUp">
+                <h2>Product Image</h2>
+                <img src="shop/clothes/Breathable Solid Color round Neck Short Sleeve Cotton T-Shirts - peach.jpg" style="width: 300px; height: 360px;" id="popupImage" onclick="openPopUp(this.src)">
+                <span onclick="closePopUp()"><i class="bi bi-x-lg"></i></span>
+                <p id="productDetails"></p>
+            </div>
+
+            <!--clothes-->
+            <section id="proContainer" class="sectionPadding">
+                <h2 id="outfit">EcoChic Outfit Essentials</h2>
+                <p>“Style Sustainably: EcoChic, Where Green Meets Glamour.”</p>
+
+                <div class="products">
+
+                    <div class="product medium-4 columns" data-name="Breathable solid color round neck Tee" data-price="7.49" data-id="0">
+                        <img src="shop/clothes/Breathable Solid Color round Neck Short Sleeve Cotton T-Shirts - peach.jpg" style="width: 240px; height: 200px;" alt="linen bandana" onclick="openPopUp(this.src)">
+                        <p>Tops</p>
+                        <h3>Breathable solid color round neck Tee</h3>
+                        <h4>&#163;7.49</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="Solid Seam Detail Shoulder Tee" data-price="5.82" data-id="1">
+                        <img src="shop/clothes/Dazy-Less Solid Seam Detail Tee.jpg" style="width: 240px; height: 200px;" alt="Solid Seam Detail tee" onclick="openPopUp(this.src)" />
+                        <p>Tops</p>
+                        <h3>Solid Seam Detail Tee</h3>
+                        <h4>&#163;5.82</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="Solid Drop Shoulder Tee" data-price="6.59" data-id="2">
+                        <img src="shop/clothes/Dazy-Less Solid Drop Shoulder Tee.jpg" style="width: 240px; height: 200px;" alt="Solid Tea" onclick="openPopUp(this.src)" />
+                        <p>Tops</p>
+                        <h3>Solid Drop Shoulder Tee</h3>
+                        <h4>&#163;6.59</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+
+                </div>
+
+                <div class="products">
+
+                    <div class="product medium-4 columns" data-name="Reusable Tote Bag" data-price="5.55" data-id="3">
+                        <img src="shop/clothes/Environmentalist reusable Tote Bag.jpg" style="width: 240px; height: 200px;" alt="Reusable Tote Bag" onclick="openPopUp(this.src)">
+                        <p>Bags</p>
+                        <h3>Reusable Tote Bag</h3>
+                        <h4>&#163;5.55</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="Custom Logo Canvas Storage Pouch" data-price="5.55" data-id="4">
+                        <img src="shop/clothes/Custom Logo Plain Natural shopping Cotton Canvas storage pouch dust bag drawstring bag.jpg" style="width: 240px; height: 200px;" alt="Custom Logo Canvas Storage Pouch" onclick="openPopUp(this.src)" />
+                        <p>Bags</p>
+                        <h3>Custom Logo Canvas Storage Pouch</h3>
+                        <h4>&#163;5.55</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="Save our planet Tote bag" data-price="5.55" data-id="5">
+                        <img src="shop/clothes/Save our planet Tote Bag.jpg" style="width: 240px; height: 200px;" alt="tote" onclick="openPopUp(this.src)" />
+                        <p>Bags</p>
+                        <h3>Save our planet Tote bag</h3>
+                        <h4>&#163;5.55</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                </div>
+
+                <div class="products">
+
+                    <div class="product medium-4 columns" data-name="Environmentalist Hoodie" data-price="5.55" data-id="6">
+                        <img src="shop/clothes/Funny Environmentalism Definition Hoodie.jpg" style="width: 240px; height: 200px;" alt="Environmentalist Hoodie" onclick="openPopUp(this.src)">
+                        <p>Hoodie</p>
+                        <h3>Funny Environmentalist Hoodie</h3>
+                        <h4>&#163;5.55</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="CMen Letter Graphic Ankle" data-price="5.55" data-id="7">
+                        <img src="shop/clothes/5pairs Men Letter Graphic Ankle Socks.jpg" style="width: 240px; height: 200px;" alt="Men Letter Graphic Ankle" onclick="openPopUp(this.src)" />
+                        <p>Socks</p>
+                        <h3>Men Letter Graphic Ankle</h3>
+                        <h4>&#163;5.55</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="Men Solid Invisible Socks" data-price="5.55" data-id="8">
+                        <img src="shop/clothes/5pairs Men Solid Invisible Socks.jpg" style="width: 240px; height: 200px;" alt="Men Solid Invisible Socks" onclick="openPopUp(this.src)" />
+                        <p>Socks</p>
+                        <h3>Men Solid Invisible Socks</h3>
+                        <h4>&#163;5.55</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                </div>
+
+                <div class="products">
+
+                    <div class="product medium-4 columns" data-name="Handwoven Scarf in Brown and Cream Colors" data-price="4.89" data-id="9">
+                        <img src="shop/clothes/Eco-Friendly Handwoven Scarf in Brown and Cream Colors.jpg" style="width: 240px; height: 200px;" alt="Handwoven Scarf in Brown and Cream Colors" onclick="openPopUp(this.src)">
+                        <p>Scarf</p>
+                        <h3>Handwoven Scarf in Brown and Cream Colors</h3>
+                        <h4>&#163;4.89</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="Seamless Solid Drop Shoulder Tee" data-price="6.99" data-id="10">
+                        <img src="shop/clothes/Solid Drop Shoulder Tee.jpg" style="width: 240px; height: 200px;" alt="Seamless Solid Drop Shoulder Tee" onclick="openPopUp(this.src)" />
+                        <p>Tops</p>
+                        <h3>Seamless Solid Drop Shoulder Tee</h3>
+                        <h4>&#163;6.99</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="brown linen bandana - headband - scarf" data-price="4.99" data-id="11">
+                        <img src="shop/clothes/Camel brown linen bandana - headband - scarf_  Small square hair scarf. Triangle head scarf. Unisex neckerchief. Kerchief for men women kids" style="width: 240px; height: 200px;" alt="brown linen bandana - headband - scarf" onclick="openPopUp(this.src)"
+                        />
+                        <p>Scarf</p>
+                        <h3>brown linen bandana - headband - scarf</h3>
+                        <h4>&#163;4.99</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--stationary-->
+            <section id="proContainer" class="sectionPadding">
+                <h2 id="stationary">NatureNote Essentials</h2>
+                <p>“NatureNote Essentials - Capture Your World on Paper”</p>
+
+                <div class="products">
+
+                    <!-- 1st product-->
+                    <div class="product medium-4 columns" data-name="Recycled Newspaper , Lead Pencil x 5" data-price="5.55" data-id="12">
+                        <img src="shop/Recycled Newspaper , Lead Pencil, Stocking.jpg" style="width: 240px; height: 200px;" alt="Recycled Newspaper , Lead Pencil x 5" onclick="openPopUp(this.src)">
+                        <p>Books</p>
+                        <h3>Recycled Newspaper , Lead Pencil x 5</h3>
+                        <h4>&#163;5.55</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <!-- 2nd product-->
+                    <div class="product medium-4 columns" data-name="Eco Friendly Pens (Pack of 50) " data-price="7.89" data-id="13">
+                        <img src="shop/removed.png" style="width: 240px; height: 200px;" alt="Eco Friendly Pens (Pack of 50) " onclick="openPopUp(this.src)">
+                        <p>pens</p>
+                        <h3>Eco Friendly Pens (Pack of 50) </h3>
+                        <h4>&#163;7.89</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <!-- 3rd product-->
+                    <div class="product medium-4 columns" data-name="Set of Two Recycled A5 Lined Notebooks" data-price="8.89" data-id="14">
+                        <img src="shop/Set of Two Recycled A5 Lined Notebooks.jpg" style="width: 240px; height: 200px;" alt="Set of Two Recycled A5 Lined Notebooks" onclick="openPopUp(this.src)">
+                        <p>Books</p>
+                        <h3>Set of Two Recycled A5 Lined Notebooks</h3>
+                        <h4>&#163;8.89</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+                </div>
+
+                <div class="products">
+
+                    <div class="product medium-4 columns" data-name="Bamboo Wood Pen Cup Holder" data-price="6.40" data-id="15">
+                        <img src="shop/Pen Cup Holder, Bamboo Wood  Pencil Holder_prev_ui.png" style="width: 240px; height: 200px;" alt="Bamboo Wood Pen Cup Holder" onclick="openPopUp(this.src)">
+                        <p>pen-holder</p>
+                        <h3>Bamboo Wood Pen Cup Holder</h3>
+                        <h4>&#163;6.40</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="Recycled planner / journal" data-price="5.55" data-id="16">
+                        <img src="shop/Inspired by literature, designed for sustainability.jpg" style="width: 240px; height: 200px;" alt="Recycled planner / journal" onclick="openPopUp(this.src)">
+                        <p>Books</p>
+                        <h3>Recycled planner / journal</h3>
+                        <h4>&#163;5.55</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="Save Earth stickers" data-price="1.50" data-id="17">
+                        <img src="shop/sticker5.jpg" style="width: 240px; height: 200px;" alt="Save Earth stickers" onclick="openPopUp(this.src)">
+                        <p>stickers</p>
+                        <h3>Save Earth stickers</h3>
+                        <h4>&#163;1.50</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                </div>
+
+
+            </section>
+
+            <!--done banner-->
+            <section>
+                <div>
+                    <section id="banner" class="sectionMargin">
+                        <h4>- New users only -</h4>
+                        <h2>Get <span>20% off</span> on your first purchase</h2>
+                    </section>
+                </div>
+            </section>
+
+            <!--deco-->
+            <section id="proContainer" class="sectionPadding">
+                <h2 id="deco">EcoTrend deco Essentials</h2>
+                <p>“Decorate Green: EcoTrend Essentials, Your Eco-Style Statement.”</p>
+
+                <div class="products">
+
+                    <div class="product medium-4 columns" data-name="Mini woven basket x 2" data-price="5.99" data-id="18">
+                        <img src="shop/deco/woven basket2.jpg" style="width: 240px; height: 200px;" alt="Mini woven basket x 2" onclick="openPopUp(this.src)">
+                        <p>Storage</p>
+                        <h3>Mini woven basket x 2</h3>
+                        <h4>&#163;5.99</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+
+                    <div class="product medium-4 columns" data-name="Rattan Storage Baskets" data-price="11.59" data-id="19">
+                        <img src="shop/deco/Storage Baskets for Clothes, Storage Basket for Closet, Storage Ideas for Clothes.jpg" style="width: 240px; height: 200px;" alt="Rattan Storage Baskets" onclick="openPopUp(this.src)" />
+                        <p>Storage</p>
+                        <h3>Rattan Storage Baskets</h3>
+                        <h4>&#163;11.59</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="Aesthetic minimalist clay pots" data-price="14.89" data-id="20">
+                        <img src="shop/deco/download (23).jpg" style="width: 240px; height: 200px;" alt="Aesthetic minimalist clay pots" onclick="openPopUp(this.src)" />
+                        <p>Clay pots</p>
+                        <h3>Aesthetic minimalist clay pots</h3>
+                        <h4>&#163;14.89</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                </div>
+
+                <div class="products">
+
+                    <div class="product medium-4 columns" data-name="Mini rattan basket" data-price="3.40" data-id="21">
+                        <img src="shop/deco/rattan basket 2.jpg" style="width: 240px; height: 200px;" alt="Mini rattan basket" onclick="openPopUp(this.src)" />
+                        <p>Clay pots</p>
+                        <h3>Mini rattan basket</h3>
+                        <h4>&#163;3.40</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--other-->
+            <section id="proContainer" class="sectionPadding">
+                <h2 id="other">EcoSmart Essentials</h2>
+                <p>“Smart Choices, Greener World: EcoSmart Essentials for a Healthier Home and Planet.”</p>
+
+                <div class="products">
+
+                    <div class="product medium-4 columns" data-name="Solar Charger, 5000mAh Portable Solar Power Bank " data-price="27.89" data-id="22">
+                        <img src="shop/ecohome/Dizaul Solar Charger, 5000mAh Portable Solar Power Bank.jpg" style="width: 240px; height: 200px;" alt="Solar Charger, 5000mAh Portable Solar Power Bank " onclick="openPopUp(this.src)">
+                        <p>Electronics</p>
+                        <h3>Solar Charger, 5000mAh Portable Solar Power Bank </h3>
+                        <h4>&#163;27.89</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="Non toxic Cleaning Essentials Kit-basic" data-price="11.89" data-id="23">
+                        <img src="shop/ecohome/Cleaning Essentials Kit.jpg" style="width: 240px; height: 200px;" alt="Non toxic Cleaning Essentials Kit-basic" onclick="openPopUp(this.src)" />
+                        <p>Cleaning</p>
+                        <h3>Non toxic Cleaning Essentials Kit-basic</h3>
+                        <h4>&#163;11.89</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                    <div class="product medium-4 columns" data-name="Essential gardening tools" data-price="17.89" data-id="23">
+                        <img src="shop/ecohome/The Floral Society Garden Tools, 7 Styles, Hardwood & Steel, Trowel, Cultivator, Weeder.jpg" style="width: 240px; height: 200px;" alt="Essential gardening tools" onclick="openPopUp(this.src)" />
+                        <p>Gardening</p>
+                        <h3>Essential gardening tools</h3>
+                        <h4>&#163;17.89</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                </div>
+
+                <div class="products">
+
+                    <div class="product medium-4 columns" data-name="Eco friendly electronic kettle" data-price="12.89" data-id="25">
+                        <img src="shop/ecohome/Stainless Steel, Wood Handle, Whistling Tea Kettle (2_5 Lt, 85 Oz).jpg" style="width: 240px; height: 200px;" alt="Eco friendly electronic kettle" onclick="openPopUp(this.src)" />
+                        <p>Electronics</p>
+                        <h3>Eco friendly electronic kettle</h3>
+                        <h4>&#163;12.89</h4>
+                        <input type="text" class="count" value="1" />
+                        <button class="tiny"><i id="cart" class="fa fa-shopping-cart"></i></button>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!--footer-->
+    <section class="footer">
+        <h4>Our story</h4>
+        <p>we offer plenty of ideas tips and eco frindly projects in the vesion of protecting Environment and help the man kind to live in a Eco friendly and well developed infastructure. <br> We also organize special events and fund raising campaigns.One
+            of the best sustainable organization </p>
+        <div class="footer-info">
+            <ul>
+                <h4>COMPANY</h4>
+                <a href="TEAM.html">
+                    <li>About us</li>
+                </a>
+                <a href="">
+                    <li>Terms and privacy</li>
+                </a>
+                <a href="feedback.html">
+                    <li>FEEDBACK us</li>
+                </a>
+            </ul>
+            <ul>
+                <h4>Navigation</h4>
+                <a href="home.html">
+                    <li>HOME</li>
+                </a>
+                <a href="shop.html">
+                    <li>SHOP</li>
+                </a>
+                <a href="userprofile.html">
+                    <li>USER PROFILE</li>
+                </a>
+
+            </ul>
+            <ul>
+                <h4>‎ ‎ ‎ ‎ </h4>
+                <a href="Gallery.html">
+                    <li>GALLERY</li>
+                </a>
+                <a href="Sitemap.html">
+                    <li>SITE MAP</li>
+                </a>
+
+
+            </ul>
+
+        </div>
+        <div class="icons">
+            <a href="https://www.facebook.com/profile.php?id=100083272787172&mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
+            <a href=""> <i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/_laksh__an_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> <i class="fa fa-instagram"></i></a>
+            <a href="https://lk.linkedin.com/in/lakshan-fernando-770037294"> <i class="fa fa-linkedin"></i></a>
+
+        </div>
+        <p>Made by <a href="editor.html">Thisumi sahansa</a> with <i class="fa fa-heart-o"></i></p>
+
+
+
+    </section>
+
+    <script type="text/template" id="cartT">
+        <% _.each(items, function (item) { %>
+            <div class="panel">
+                <h3>
+                    <%= item.name %>
+                </h3> <span class="label">
+          <%= item.count %> piece<% if(item.count > 1)
+          {%>s
+          <%}%> for <%= item.total %>$</span > </div>
+          <% }); %>
+          </script>
+
+        <a href="#"><p>back to the top</p></a>
+        <script>
+            const allStar = document.querySelectorAll('.rating .star')
+            const ratingValue = document.querySelector('.rating input')
+    
+            allStar.forEach((item, idx) => {
+                    item.addEventListener('click', function() {
+                        let click = 0
+                        ratingValue.value = idx + 1
+    
+                        allStar.forEach(i => {
+                            i.classList.replace('bxs-star', 'bx-star')
+                            i.classList.remove('active')
+                        })
+                        for (let i = 0; i < allStar.length; i++) {
+                            if (i <= idx) {
+                                allStar[i].classList.replace('bx-star', 'bxs-star')
+                                allStar[i].classList.add('active')
+                            } else {
+                                allStar[i].style.setProperty('--i', click)
+                                click++
+                            }
+                        }
+                    })
+                })
+            
+    
+    
+    
+    
+    
+            let dropdownbtn = document.getElementById("drop-text");
+            let list = document.getElementById("list");
+            let icon = document.getElementById("icon");
+            let span = document.getElementById("span");
+            let Input = document.getElementById("search-input");
+            let listItems = document.querySelectorAll(".list-item");
+    
+    
+    
+            dropdownbtn.onclick = function() {
+                if (list.classList.contains("show")) {
+                    icon.style.rotate = "0deg";
+                } else {
+                    icon.style.rotate = "-180deg";
+                }
+                list.classList.toggle("show");
+            };
+    
+            window.onclick = function(e) {
+                if (e.target.id !== "drop-text" && e.target.id !== "span" && e.target.id !== "icon") {
+                    list.classList.remove("show");
+    
+                    icon.style.rotate = "0deg";
+                }
+            };
+    
+            for (item of listItems) {
+                item.onclick = function(e) {
+                    span.innerText = e.target.innerText;
+                };
+            }
+    
+    
+    
+    
+            const Wrapper = document.querySelector('.Wrapper');
+            const loginlink = document.querySelector('.login-link');
+            const registerlink = document.querySelector('.register-link');
+            const popupbtnpop = document.querySelector('.btn-s .Log-in');
+            const iconclose = document.querySelector('.icon-close');
+            const popupbtnsign = document.querySelector('.btn-s .sign-in');
+    
+            registerlink.addEventListener('click', () => {
+                Wrapper.classList.add('active');
+            });
+    
+            popupbtnsign.addEventListener('click', () => {
+                Wrapper.classList.add('active');
+                Wrapper.classList.add('active-popupbtn');
+            });
+    
+            loginlink.addEventListener('click', () => {
+                Wrapper.classList.remove('active');
+            });
+    
+            popupbtnpop.addEventListener('click', () => {
+                Wrapper.classList.remove('active');
+                Wrapper.classList.add('active-popupbtn');
+            });
+    
+    
+            iconclose.addEventListener('click', () => {
+                Wrapper.classList.remove('active');
+                Wrapper.classList.remove('active-popupbtn');
+            });
+        </script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js'></script>
+        <script  src="./js/script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>  
+        <script src="coursework.js"></script>
+        
+        
+
+    </body>
+</html>
