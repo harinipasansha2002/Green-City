@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Customer Feed back form</title>
+
+    <Style>
+        body {
+            background-image: linear-gradient(rgba(134, 134, 134, 0.7), rgba(122, 122, 122, 0.7)), url(Images/bacja0.jpg);
+            background-size: cover;
+        }
+    </Style>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <a href="home.html"><img src="Images/logo1_prev_ui.png" alt="" class="logo"></a>
+        <h1>GREEN CITY </h1>
+        <!--search bar-->
+        <div class="search-bar">
+            <div class="drop-down">
+                <div id="drop-text" class="drop-text">
+                    <span id="span">FILTER</span>
+                    <!--<i class="fa fa-sort-asc" ></i>-->
+                    <i id="icon" class="fa fa-chevron-down"></i>
+                </div>
+                <ul id="list" class="drop-list">
+                    <li class="list-item">ALL</li>
+                    <li class="list-item">BLOGS</li>
+                    <li class="list-item">MARCKET</li>
+                    <li class="list-item">FOOD-PRINTS</li>
+                    <li class="list-item">SOCIAL ACT</li>
+                </ul>
+            </div>
+
+            <div class="searchbox">
+                <input type="text" id="search-input" class="searchbox" placeholder="Search ......">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        <div class="btn-s">
+            <button class="sign-in">sign up</button>
+            <button class="Log-in">Log in</button>
+        </div>
+    </div>
+
+    <div class="Wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box-login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="forget-remember">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="">forgot password ?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Dont have an Account?<a href="#" class="register-link"> Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box-Register">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="forget-remember">
+                    <label><input type="checkbox"> I agree to the terms & conditions </label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an Account?<a href="#" class="login-link"> Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <nav class="nav-bar">
+        <div class="slde-bar">
+            <div class="navlist" id="navlink">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="userprofile.html">USER PROFILE</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="Gallery.html">GALLERY </a></li>
+                    <li><a href="feedback.html">FEEDBACK</a></li>
+
+                </ul>
+                <ul>
+                    <li><a href="Sitemap.html">SITE MAP</a></li>
+                    <li><a href="TEAM.html">ABOUT US</a></li>
+                </ul>
+
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()"></i>
+            <div class="social-media">
+                <img src="Images/fb.png" alt="">
+                <img src="Images/ig.png" alt="">
+                <img src="Images/tw.png" alt="">
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+
+    <div class="container feedback-form">
+        <div class="feedback-img">
+            <img src="Images/rocket project.jpeg" alt="">
+        </div>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <h3>Drop us a feed back</h3>
+            <div class="feedback-row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="hidden" name="access_key" value="5afb0491-7df3-434c-9a89-324d6ff12230">
+                        <p>Name :</p>
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <p>Moble Number :</p>
+                        <input type="text" name="mobile number" class="form-control" placeholder="Mobile Number" required>
+                    </div>
+                    <div class="form-option">
+                        <p>Did you Get your Answer?</p>
+                        <label> Yes <input  value="yes" type="radio" name="Did you Get your Answer?"></label> <label> No <input  type="radio" value="no" name="Did you Get your Answer?"></label>
+                    </div>
+                    <div class="form-group">
+                        <p>Customer feed back :</p>
+                        <textarea name="customer-feedback" placeholder="Give us a feed back for our service" required></textarea>
+                    </div>
+
+
+                    <div class="form-buttons">
+                        <input type="submit" class="btndeedback-submit" value="Send feedback">
+                        <input type="reset" class="btndeedback-reset" value="Cancel feedback">
+
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <p>Email Address <small>(optional) :</small> </p>
+                        <input type="email" name="email" class="form-control" placeholder="Enter Email address">
+
+                    </div>
+                    <div class="form-option">
+                        <p>Are you satisfied with our Service?</p>
+                        <label> Satisfied <input type="radio" value="Satisfied" name="Are you satisfied with our Service?" required></label> <label> Not satisfied <input type="radio" value="Not satisfied" name="Are you satisfied with our Service?" required></label>
+                    </div>
+                    <h3 class="rate">How likely are you to Rate us!</h3>
+
+                    <div class="rating">
+
+
+                        <input type="number" name="rating" hidden>
+
+                        <i class='bx bx-star star' style="--i: 0;"></i>
+                        <i class='bx bx-star star' style="--i: 1;"></i>
+                        <i class='bx bx-star star' style="--i: 2;"></i>
+                        <i class='bx bx-star star' style="--i: 3;"></i>
+                        <i class='bx bx-star star' style="--i: 4;"></i>
+
+                    </div>
+                    <div class="status">
+                        <div class="p">
+                            <p>Very Unlikely</p>
+                        </div>
+                        <div class="p">
+                            <p>Very Likely</p>
+                        </div>
+
+
+                    </div>
+                    <div class="img-r">
+                        <img src="Images/rating.jpg" alt="">
+                    </div>
+
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+
+
+    <!--footer-->
+    <section class="footer">
+        <h4>Our story</h4>
+        <p>we offer plenty of ideas tips and eco frindly projects in the vesion of protecting Environment and help the man kind to live in a Eco friendly and well developed infastructure. <br> We also organize special events and fund raising campaigns.One
+            of the best sustainable organization </p>
+        <div class="footer-info">
+            <ul>
+                <h4>COMPANY</h4>
+                <a href="TEAM.html">
+                    <li>About us</li>
+                </a>
+                <a href="">
+                    <li>Terms and privacy</li>
+                </a>
+                <a href="feedback.html">
+                    <li>FEEDBACK us</li>
+                </a>
+            </ul>
+            <ul>
+                <h4>Navigation</h4>
+                <a href="home.html">
+                    <li>HOME</li>
+                </a>
+                <a href="shop.html">
+                    <li>SHOP</li>
+                </a>
+                <a href="userprofile.html">
+                    <li>USER PROFILE</li>
+                </a>
+
+            </ul>
+            <ul>
+                <h4>‎ ‎ ‎ ‎ </h4>
+                <a href="Gallery.html">
+                    <li>GALLERY</li>
+                </a>
+                <a href="Sitemap.html">
+                    <li>SITE MAP</li>
+                </a>
+
+
+            </ul>
+
+        </div>
+        <div class="icons">
+            <a href="https://www.facebook.com/profile.php?id=100083272787172&mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a>
+            <a href=""> <i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/_laksh__an_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="> <i class="fa fa-instagram"></i></a>
+            <a href="https://lk.linkedin.com/in/lakshan-fernando-770037294"> <i class="fa fa-linkedin"></i></a>
+
+        </div>
+        <p>Made by <a href="page-editor.html">Lakshan Fernando</a> with <i class="fa fa-heart-o"></i></p>
+
+
+
+    </section>
+
+
+    <script>
+        const allStar = document.querySelectorAll('.rating .star')
+        const ratingValue = document.querySelector('.rating input')
+
+        allStar.forEach((item, idx) => {
+                item.addEventListener('click', function() {
+                    let click = 0
+                    ratingValue.value = idx + 1
+
+                    allStar.forEach(i => {
+                        i.classList.replace('bxs-star', 'bx-star')
+                        i.classList.remove('active')
+                    })
+                    for (let i = 0; i < allStar.length; i++) {
+                        if (i <= idx) {
+                            allStar[i].classList.replace('bx-star', 'bxs-star')
+                            allStar[i].classList.add('active')
+                        } else {
+                            allStar[i].style.setProperty('--i', click)
+                            click++
+                        }
+                    }
+                })
+            })
+            // to nav bar
+        var navlink = document.getElementById("navlink");
+
+        // show menu 
+        function showmenu() {
+            navlink.style.right = "0";
+
+        }
+
+        function hidemenu() {
+            navlink.style.right = "-290px";
+        }
+
+
+
+
+
+        let dropdownbtn = document.getElementById("drop-text");
+        let list = document.getElementById("list");
+        let icon = document.getElementById("icon");
+        let span = document.getElementById("span");
+        let Input = document.getElementById("search-input");
+        let listItems = document.querySelectorAll(".list-item");
+
+
+
+        dropdownbtn.onclick = function() {
+            if (list.classList.contains("show")) {
+                icon.style.rotate = "0deg";
+            } else {
+                icon.style.rotate = "-180deg";
+            }
+            list.classList.toggle("show");
+        };
+
+        window.onclick = function(e) {
+            if (e.target.id !== "drop-text" && e.target.id !== "span" && e.target.id !== "icon") {
+                list.classList.remove("show");
+
+                icon.style.rotate = "0deg";
+            }
+        };
+
+        for (item of listItems) {
+            item.onclick = function(e) {
+                span.innerText = e.target.innerText;
+            };
+        }
+
+
+
+
+        const Wrapper = document.querySelector('.Wrapper');
+        const loginlink = document.querySelector('.login-link');
+        const registerlink = document.querySelector('.register-link');
+        const popupbtnpop = document.querySelector('.btn-s .Log-in');
+        const iconclose = document.querySelector('.icon-close');
+        const popupbtnsign = document.querySelector('.btn-s .sign-in');
+
+        registerlink.addEventListener('click', () => {
+            Wrapper.classList.add('active');
+        });
+
+        popupbtnsign.addEventListener('click', () => {
+            Wrapper.classList.add('active');
+            Wrapper.classList.add('active-popupbtn');
+        });
+
+        loginlink.addEventListener('click', () => {
+            Wrapper.classList.remove('active');
+        });
+
+        popupbtnpop.addEventListener('click', () => {
+            Wrapper.classList.remove('active');
+            Wrapper.classList.add('active-popupbtn');
+        });
+
+
+        iconclose.addEventListener('click', () => {
+            Wrapper.classList.remove('active');
+            Wrapper.classList.remove('active-popupbtn');
+        });
+    </script>
+    <script src="home.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
