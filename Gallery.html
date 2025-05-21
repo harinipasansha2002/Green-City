@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Gallery</title>
+    <style>
+        /* harini gallery */
+        
+        .gallbody {
+            margin-top: 15%;
+            margin-bottom: 40%;
+            position: relative;
+            background-color: #eee;
+        }
+        
+        .default {
+            --primary-color: #eaeaea;
+            --secondary-color: #f3f3f3;
+            background-color: var(--primary-color);
+        }
+        
+        .color-select-container {
+            left: 0;
+            padding-left: 10px;
+            margin-top: -15%;
+            position: absolute;
+            top: 5px;
+            right: 20px;
+        }
+        
+        .color-select {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        .color-option {
+            width: 30px;
+            height: 30px;
+            margin-left: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-default {
+            background-color: #eaeaea;
+            border: 1px solid #333;
+        }
+        
+        .gallpw {
+            margin-top: 5%;
+            text-align: center;
+        }
+        
+        .popis {
+            font-weight: bold;
+            font-size: 30px;
+            color: rgb(97, 96, 180);
+        }
+        
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 400px;
+            padding: 50px;
+            background-color: #f5f5f5;
+            box-shadow: 0 30px 50px #dbdbdb;
+        }
+        
+        #slide {
+            width: max-content;
+            margin-top: 50px;
+        }
+        
+        .item {
+            width: 170px;
+            height: 250px;
+            background-position: 50% 50%;
+            display: inline-block;
+            transition: 0.5s;
+            background-size: cover;
+            position: absolute;
+            z-index: 1;
+            top: 60%;
+            transform: translate(0, 0);
+            border-radius: 20px;
+            box-shadow: 0 30px 50px #505050;
+        }
+        
+        .item:nth-child(1),
+        .item:nth-child(2) {
+            left: 0;
+            top: 0;
+            transform: translate(0, 0);
+            border-radius: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: none;
+        }
+        
+        .item:nth-child(3) {
+            left: 55%;
+        }
+        
+        .item:nth-child(4) {
+            left: calc(55% + 190px);
+        }
+        
+        .item:nth-child(5) {
+            left: calc(55% + 380px);
+        }
+        
+        .item:nth-child(n+6) {
+            left: calc(55% + 570px);
+            opacity: 0;
+        }
+        
+        .item .content {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            width: 300px;
+            text-align: left;
+            padding: 0;
+            transform: translate(0, -50%);
+            display: none;
+            font-family: sans-serif;
+            color: #eaeaea;
+        }
+        
+        .item:nth-child(2) .content {
+            display: block;
+            z-index: 11111;
+        }
+        
+        .item .name {
+            font-size: 40px;
+            font-weight: bold;
+            opacity: 0;
+            animation: showcontent 1s ease-in-out 1 forwards
+        }
+        
+        .item .num {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 30px 0;
+            opacity: 0;
+            animation: showcontent 1s ease-in-out 0.3s 1 forwards
+        }
+        
+        .item .des {
+            font-size: 20px;
+            opacity: 0;
+            animation: showcontent 1s ease-in-out 0.6s 1 forwards
+        }
+        
+        @keyframes showcontent {
+            from {
+                opacity: 0;
+                transform: translate(0, 100px);
+                filter: blur(33px);
+            }
+            to {
+                opacity: 1;
+                transform: translate(0, 0);
+                filter: blur(0);
+            }
+        }
+        
+        .buttons {
+            position: absolute;
+            bottom: 10px;
+            z-index: 222222;
+            text-align: center;
+            width: 80%;
+        }
+        
+        .buttons button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #555;
+            transition: 0.5s;
+        }
+        
+        .buttons button:hover {
+            background-color: #bac383;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="home.html"><img src="Images/logo1_prev_ui.png" alt="" class="logo"></a>
+        <h1>GREEN CITY </h1>
+        <!--search bar-->
+        <div class="search-bar">
+            <div class="drop-down">
+                <div id="drop-text" class="drop-text">
+                    <span id="span">FILTER</span>
+                    <!--<i class="fa fa-sort-asc" ></i>-->
+                    <i id="icon" class="fa fa-chevron-down"></i>
+                </div>
+                <ul id="list" class="drop-list">
+                    <li class="list-item">ALL</li>
+                    <li class="list-item">BLOGS</li>
+                    <li class="list-item">MARCKET</li>
+                    <li class="list-item">FOOD-PRINTS</li>
+                    <li class="list-item">SOCIAL ACT</li>
+                </ul>
+            </div>
+            <div class="searchbox">
+                <input type="text" id="search-input" class="searchbox1" placeholder="Search ......">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        <div class="btn-s">
+            <button class="sign-in">sign up</button>
+            <button class="Log-in">Log in</button>
+        </div>
+    </div>
+    <div class="Wrapper">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box-login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="forget-remember">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="">forgot password ?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Dont have an Account?<a href="#" class="register-link"> Register</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="form-box-Register">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required style="border:hidden">
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="forget-remember">
+                    <label><input type="checkbox"> I agree to the terms & conditions </label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <div class="login-register">
+                    <p>Already have an Account?<a href="#" class="login-link"> Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--Start the navigation bar-->
+    <nav class="nav-bar">
+        <div class="slde-bar">
+            <div class="navlist" id="navlink">
+                <i class="fa fa-times" onclick="hidemenu()"></i>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="userprofile.html">USER PROFILE</a></li>
+                    <li><a href="shop.html">SHOP</a></li>
+                    <li><a href="Gallery.html">GALLERY </a></li>
+                    <li><a href="feedback.html">FEEDBACK</a></li>
+
+                </ul>
+                <ul>
+                    <li><a href="Sitemap.html">SITE MAP</a></li>
+                    <li><a href="TEAM.html">ABOUT US</a></li>
+                </ul>
+
+            </div>
+            <i class="fa fa-bars" onclick="showmenu()"></i>
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=100090712208731"> <img src="Images/fb.png" alt=""></a>
+                <a href="https://www.instagram.com/harinipasansha/?next=%2F"> <img src="Images/ig.png" alt=""></a>
+                <a href="https://twitter.com/Mrpro93809286"> <img src="Images/tw.png" alt=""> </a>
+            </div>
+        </div>
+    </nav>
+
+    <!--Start the gallery-->
+    <div class="gallpw">
+        <p class="popis">Gallery</p>
+    </div>
+    <section class="gallbody">
+        <div class="options">
+            <div class="color-select-container">
+                <ul class="color-select">
+                    <li><button class="color-option btn_default" value="default">D</button></li>
+                    <li><button class="color-option btn_random randomize-button" value="random">R</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Set the images-->
+        <div class="container">
+            <div id="slide">
+                <div class="item" style="background-image: url(images/image22.jpg);">
+                    <div class="content">
+                        <div class="name">Public Spaces</div>
+                        <div class="num">Picture 06</div>
+                        <div class="des">Beautiful square of plaza de espana in seville, Spain.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image1.jpg);">
+                    <div class="content">
+                        <div class="name">Sustainable Architecture</div>
+                        <div class="num">Picture 01</div>
+                        <div class="des">A luxurious modern house with a spacious front yard.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image2.jpg);">
+                    <div class="content">
+                        <div class="name">Sustainable Architecture</div>
+                        <div class="num">Picture 02</div>
+                        <div class="des">A house with a lot of windows and lots of plants.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image3.jpg);">
+                    <div class="content">
+                        <div class="name">Sustainable Architecture</div>
+                        <div class="num">Picture 03</div>
+                        <div class="des">A sustainable bulding's rooftop covered with green vegetation, showcasing the concept of green roofs for energy efficiency and environmental benefits.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image4.jpg);">
+                    <div class="content">
+                        <div class="name">Sustainable Architecture</div>
+                        <div class="num">Picture 04</div>
+                        <div class="des">A futuristic concept for remote ecological luxury homes which are good for the earth, conservation, and environment. It uses renewable energy and blend in with nature.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image5.jpg);">
+                    <div class="content">
+                        <div class="name">Sustainable Architecture</div>
+                        <div class="num">Picture 05</div>
+                        <div class="des">Beautiful organic Spanish modern revival kitchen interior with arched walkways sustainable furniture.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image6.jpg);">
+                    <div class="content">
+                        <div class="name">Sustainable Architecture</div>
+                        <div class="num">Picture 06</div>
+                        <div class="des">A nature-inspired gym design that integrates living green walls, natural wood accents, and large windows to create a refreshing and energizing workout space.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image7.jpg);">
+                    <div class="content">
+                        <div class="name">Sustainable Architecture</div>
+                        <div class="num">Picture 07</div>
+                        <div class="des">Green, sustainable and eco-friendly office or workspace interior with natural light. Modern architecture and business.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image8.jpg);">
+                    <div class="content">
+                        <div class="name">Sustainable Architecture</div>
+                        <div class="num">Picture 08</div>
+                        <div class="des">Eco-friendly glass office featuring sustainable building with green environment and trees.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image9.jpg);">
+                    <div class="content">
+                        <div class="name">Sustainable Architecture</div>
+                        <div class="num">Picture 09</div>
+                        <div class="des">Wireless power transfer systems for homes and public spaces.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image10.jpg);">
+                    <div class="content">
+                        <div class="name">Sustainable Architecture</div>
+                        <div class="num">Picture 10</div>
+                        <div class="des">Futuristic modern white public library. Light and spacious modern library with bookshelves, working space.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image11.jpg);">
+                    <div class="content">
+                        <div class="name">Urban Transportation</div>
+                        <div class="num">Picture 01</div>
+                        <div class="des">Aerial view of a big highway intersection in Dubai, UAE, at suset. Transportation and communications concept.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image12.jpg);">
+                    <div class="content">
+                        <div class="name">Urban Transportation</div>
+                        <div class="num">Picture 02</div>
+                        <div class="des">Highway transportation with cars and Truck.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image13.jpg);">
+                    <div class="content">
+                        <div class="name">Urban Transportation</div>
+                        <div class="num">Picture 03</div>
+                        <div class="des">Empty urban asphalt road exterior with city buildings background. New modern highway concrete construction. Concept way to success. Transportation logistic industry fast delivery.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image14.jpg);">
+                    <div class="content">
+                        <div class="name">Urban Transportation</div>
+                        <div class="num">Picture 04</div>
+                        <div class="des">A sustainable transportation hub with electric vehicle charging stations and bike-sharing facilities in an ecological setting.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image15.jpg);">
+                    <div class="content">
+                        <div class="name">Urban Transportation</div>
+                        <div class="num">Picture 05</div>
+                        <div class="des">Bicycle lane</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image16.jpg);">
+                    <div class="content">
+                        <div class="name">Urban Transportation</div>
+                        <div class="num">Picture 06</div>
+                        <div class="des">Transportation ecology. Green sustainable mobility Young man unlocks an e-scooter with his mobile phone. Electric scooter new way city. Green transportation. Sustainable climate neutral cities goals.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image17.jpg);">
+                    <div class="content">
+                        <div class="name">Public Spaces</div>
+                        <div class="num">Picture 01</div>
+                        <div class="des">Spectacular eco futuristic cityscape full with greenery, skyscrapers, parks, and other manmade green spaces in urban area. Green garden in modern city.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image18.jpg);">
+                    <div class="content">
+                        <div class="name">Public Spaces</div>
+                        <div class="num">Picture 02</div>
+                        <div class="des">Urban park landscape with modern architecture, highlighting the integration of green spaces and city life in a vibrant and dynamic setting.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image19.jpg);">
+                    <div class="content">
+                        <div class="name">Public Spaces</div>
+                        <div class="num">Picture 03</div>
+                        <div class="des">A rooftop garden in an urban setting, illustrating innovative ways to incorporate green spaces into city landscapes for improved air quality and biodiversity.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image20.jpg);">
+                    <div class="content">
+                        <div class="name">Public Spaces</div>
+                        <div class="num">Picture 04</div>
+                        <div class="des">Spectacular eco-futuristic cityscape ESG concept full with greenery, skyscrapers, parks, and other manmade green spaces in urban area. Green garden in modern city.</div>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(images/image21.jpg);">
+                    <div class="content">
+                        <div class="name">Public Spaces</div>
+                        <div class="num">Picture 05</div>
+                        <div class="des">Sustainable city street infrastructure with bike lanes and green spaces.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev"><i class="fa solid fa-angle-left"></i></button>
+                <button id="next"><i class="fa solid fa-angle-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <section class="footer">
+        <h4>Our story</h4>
+        <p>We offer plenty of ideas tips and eco frindly projects in the vesion of protecting environment and help the man kind to live in a eco friendly and well developed infastructure. <br> We also organize special events and fund raising campaigns. One
+            of the best sustainable organization.</p>
+        <div class="footer-info">
+            <ul>
+                <h4>COMPANY</h4>
+                <a href="TEAM.html">
+                    <li>About us</li>
+                </a>
+                <a href="">
+                    <li>Terms and privacy</li>
+                </a>
+                <a href="feedback.html">
+                    <li>FEEDBACK us</li>
+                </a>
+            </ul>
+            <ul>
+                <h4>Navigation</h4>
+                <a href="home.html">
+                    <li>HOME</li>
+                </a>
+                <a href="shop.html">
+                    <li>SHOP</li>
+                </a>
+                <a href="userprofile.html">
+                    <li>USER PROFILE</li>
+                </a>
+
+            </ul>
+            <ul>
+                <h4>‎ ‎ ‎ ‎ </h4>
+                <a href="Gallery.html">
+                    <li>GALLERY</li>
+                </a>
+                <a href="Sitemap.html">
+                    <li>SITE MAP</li>
+                </a>
+
+
+            </ul>
+
+        </div>
+        <div class="icons">
+            <a href="https://www.facebook.com/profile.php?id=100090712208731"><i class="fa fa-facebook"></i></a>
+            <a href=""> <i class="fa fa-twitter"></i></a>
+            <a href="https://www.instagram.com/harinipasansha/?next=%2F"> <i class="fa fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/harini-pasansha-9b50b8295/"> <i class="fa fa-linkedin"></i></a>
+        </div>
+        <p>Made by <a href="PageEditor.html">Harini Pasansha</a> with <i class="fa fa-heart-o"></i></p>
+    </section>
+    <script>
+        //Color Scheme Change
+        const colorSelect = document.querySelector('.color-select');
+        const colorOptions = document.querySelectorAll('.color-option');
+        const body = document.body;
+
+        colorOptions.forEach(colorOption => {
+            colorOption.addEventListener('click', () => {
+                const selectedColor = colorOption.value;
+                body.removeAttribute('class');
+                body.removeAttribute('style');
+                body.classList.add(selectedColor);
+            });
+        });
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        var randomizeButton = document.querySelector(".randomize-button");
+        randomizeButton.addEventListener("click", function() {
+            var randomColor = getRandomColor();
+            document.body.style.backgroundColor = randomColor;
+        });
+
+        //Buttons Active
+        document.getElementById('next').onclick = function() {
+            let lists = document.querySelectorAll('.item');
+            document.getElementById('slide').appendChild(lists[0]);
+        }
+        document.getElementById('prev').onclick = function() {
+            let lists = document.querySelectorAll('.item');
+            document.getElementById('slide').prepend(lists[lists.length - 1]);
+        }
+
+        // to nav bar
+        var navlink = document.getElementById("navlink");
+
+        // show menu 
+        function showmenu() {
+            navlink.style.right = "0";
+
+        }
+
+        function hidemenu() {
+            navlink.style.right = "-290px";
+        }
+
+        let dropdownbtn = document.getElementById("drop-text");
+        let list = document.getElementById("list");
+        let icon = document.getElementById("icon");
+        let span = document.getElementById("span");
+        let Input = document.getElementById("search-input");
+        let listItems = document.querySelectorAll(".list-item");
+
+        dropdownbtn.onclick = function() {
+            if (list.classList.contains("show")) {
+                icon.style.rotate = "0deg";
+            } else {
+                icon.style.rotate = "-180deg";
+            }
+            list.classList.toggle("show");
+        };
+
+        window.onclick = function(e) {
+            if (e.target.id !== "drop-text" && e.target.id !== "span" && e.target.id !== "icon") {
+                list.classList.remove("show");
+
+                icon.style.rotate = "0deg";
+            }
+        };
+
+        for (item of listItems) {
+            item.onclick = function(e) {
+                span.innerText = e.target.innerText;
+            };
+        }
+
+        const Wrapper = document.querySelector('.Wrapper');
+        const loginlink = document.querySelector('.login-link');
+        const registerlink = document.querySelector('.register-link');
+        const popupbtnpop = document.querySelector('.btn-s .Log-in');
+        const iconclose = document.querySelector('.icon-close');
+        const popupbtnsign = document.querySelector('.btn-s .sign-in');
+
+        registerlink.addEventListener('click', () => {
+            Wrapper.classList.add('active');
+        });
+
+        popupbtnsign.addEventListener('click', () => {
+            Wrapper.classList.add('active');
+            Wrapper.classList.add('active-popupbtn');
+        });
+
+        loginlink.addEventListener('click', () => {
+            Wrapper.classList.remove('active');
+        });
+
+        popupbtnpop.addEventListener('click', () => {
+            Wrapper.classList.remove('active');
+            Wrapper.classList.add('active-popupbtn');
+        });
+
+        iconclose.addEventListener('click', () => {
+            Wrapper.classList.remove('active');
+            Wrapper.classList.remove('active-popupbtn');
+        });
+    </script>
+    <script src="home.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
